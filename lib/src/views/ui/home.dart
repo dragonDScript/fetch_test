@@ -11,12 +11,7 @@ class Home extends StatefulWidget {
 class _Home extends State<StatefulWidget> {
   var entries = [];
 
-  void newTemplate(context) {
-    Dialog(
-      child: Text("hola"),
-    );
-    showDialog(context: context);
-  }
+  void newTemplate(context) {}
 
   Widget build(BuildContext context) {
     bool isDesktop = MediaQuery.of(context).size.width > 600;

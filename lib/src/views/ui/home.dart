@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:fetch_test/src/views/ui/appbar.dart';
 
 class Home extends StatelessWidget {
+  void _new_template() {}
+
   @override
   Widget build(BuildContext context) {
+    bool isDesktop = MediaQuery.of(context).size.width > 600;
     return Scaffold(
         appBar: customAppBar,
         body: Row(
@@ -16,12 +19,12 @@ class Home extends StatelessWidget {
                         child: TextButton.icon(
                           icon: Icon(Icons.add),
                           label: Text("Create new template"),
-                          onPressed: () {},
+                          onPressed: _new_template,
                         ))
                   ],
                 ),
                 flex: 3),
-            Expanded(child: Text("2"), flex: 5)
+            Expanded(child: Text("2"), flex: isDesktop == true ? 5 : null)
           ],
         ));
   }

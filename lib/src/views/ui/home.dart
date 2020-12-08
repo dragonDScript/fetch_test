@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:fetch_test/src/views/ui/appbar.dart';
 
-class Home extends StatelessWidget {
-  void newTemplate() {}
-
-  final entries = [];
-
+class Home extends StatefulWidget {
   @override
+  State<StatefulWidget> createState() {
+    return _Home();
+  }
+}
+
+class _Home extends State<StatefulWidget> {
+  var entries = [];
+
+  void newTemplate(context) {
+    Dialog(
+      child: Text("hola"),
+    );
+    showDialog(context: context);
+  }
+
   Widget build(BuildContext context) {
     bool isDesktop = MediaQuery.of(context).size.width > 600;
     return Scaffold(
@@ -17,12 +28,14 @@ class Home extends StatelessWidget {
                 child: ListView(
                   children: [
                     Container(
-                        color: Colors.grey[200],
-                        child: TextButton.icon(
+                      color: Colors.grey[200],
+                      child: TextButton.icon(
                           icon: Icon(Icons.add),
                           label: Text("Create new template"),
-                          onPressed: newTemplate,
-                        )),
+                          onPressed: () {
+                            newTemplate(context);
+                          }),
+                    ),
                     ListView.builder(
                         padding: const EdgeInsets.all(8),
                         itemCount: entries.length,

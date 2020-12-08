@@ -8,7 +8,18 @@ class Home extends StatelessWidget {
         appBar: customAppBar,
         body: Row(
           children: [
-            Expanded(child: Text("1"), flex: 3),
+            Expanded(
+                child: ListView(
+                  children: [
+                    Container(
+                        color: Colors.grey[200],
+                        child: TextButton(
+                          child: Text("Create new Template"),
+                          onPressed: () {},
+                        ))
+                  ],
+                ),
+                flex: 3),
             Expanded(child: Text("2"), flex: 5)
           ],
         ));

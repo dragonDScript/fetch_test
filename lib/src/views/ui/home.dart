@@ -13,8 +13,9 @@ class Home extends StatelessWidget {
                   children: [
                     Container(
                         color: Colors.grey[200],
-                        child: TextButton(
-                          child: Text("Create new Template"),
+                        child: TextButton.icon(
+                          icon: Icon(Icons.add),
+                          label: Text("Create new template"),
                           onPressed: () {},
                         ))
                   ],

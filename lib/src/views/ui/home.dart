@@ -11,7 +11,15 @@ class Home extends StatefulWidget {
 class _Home extends State<StatefulWidget> {
   var entries = [];
 
-  void newTemplate(context) {}
+  void newTemplate(context) {
+    Navigator.of(context).push(new MaterialPageRoute<Null>(
+        builder: (BuildContext context) {
+          return Material(
+            child: AppBar(title: Text('Create template')),
+          );
+        },
+        fullscreenDialog: true));
+  }
 
   Widget build(BuildContext context) {
     bool isDesktop = MediaQuery.of(context).size.width > 600;

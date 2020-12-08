@@ -6,13 +6,10 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: customAppBar,
-        body: Flex(
-          direction: Axis.horizontal,
+        body: Row(
           children: [
-            Column(
-              children: [Text("")],
-            ),
-            Column(children: [Text("")])
+            Expanded(child: Text("1"), flex: 1),
+            Expanded(child: Text("2"), flex: 10)
           ],
         ));
   }

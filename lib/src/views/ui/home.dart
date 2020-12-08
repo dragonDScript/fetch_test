@@ -8,8 +8,8 @@ class Home extends StatelessWidget {
         appBar: customAppBar,
         body: Row(
           children: [
-            Expanded(child: Text("1"), flex: 1),
-            Expanded(child: Text("2"), flex: 10)
+            Expanded(child: Text("1"), flex: null),
+            Expanded(child: Text("2"), flex: 5)
           ],
         ));
   }

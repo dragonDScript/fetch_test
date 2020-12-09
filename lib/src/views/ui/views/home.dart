@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fetch_test/src/views/ui/appbar.dart';
-import 'package:fetch_test/src/views/ui/newTemplate.dart' as template;
+import 'package:fetch_test/src/views/ui/sections/appbar.dart';
+import 'package:fetch_test/src/views/ui/fullscreen/newTemplate.dart'
+    as template;
 
 class Home extends StatefulWidget {
   @override

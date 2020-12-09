@@ -15,7 +15,15 @@ class _Home extends State<StatefulWidget> {
     Navigator.of(context).push(new MaterialPageRoute<Null>(
         builder: (BuildContext context) {
           return Material(
-            child: AppBar(title: Text('Create template')),
+            child: AppBar(
+              title: Text('Create template'),
+              actions: [
+                IconButton(
+                  icon: Icon(Icons.check),
+                  onPressed: () {},
+                )
+              ],
+            ),
           );
         },
         fullscreenDialog: true));

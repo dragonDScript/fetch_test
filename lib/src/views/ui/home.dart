@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fetch_test/src/views/ui/appbar.dart';
+import 'package:fetch_test/src/views/ui/newTemplate.dart' as template;
 
 class Home extends StatefulWidget {
   @override
@@ -14,17 +15,7 @@ class _Home extends State<StatefulWidget> {
   void newTemplate(context) {
     Navigator.of(context).push(new MaterialPageRoute<Null>(
         builder: (BuildContext context) {
-          return Material(
-            child: AppBar(
-              title: Text('Create template'),
-              actions: [
-                IconButton(
-                  icon: Icon(Icons.check),
-                  onPressed: () {},
-                )
-              ],
-            ),
-          );
+          return template.newTemplate;
         },
         fullscreenDialog: true));
   }

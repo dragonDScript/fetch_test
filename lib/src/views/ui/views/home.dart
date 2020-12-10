@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fetch_test/src/views/ui/sections/appbar.dart';
+import 'package:fetch_test/src/views/ui/sections/appbar.dart' as customAppBar;
 import 'package:fetch_test/src/views/ui/fullscreen/newTemplate.dart'
     as template;
 
@@ -24,7 +24,7 @@ class _Home extends State<StatefulWidget> {
   Widget build(BuildContext context) {
     bool isDesktop = MediaQuery.of(context).size.width > 600;
     return Scaffold(
-        appBar: customAppBar,
+        appBar: customAppBar.customAppBar(context),
         body: Row(
           children: [
             Expanded(

@@ -2,7 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:fetch_test/src/views/ui/fullscreen/settings.dart'
     as settingsTemplate;
 
-AppBar customAppBar = AppBar(
-  title: Text("XStore Fetch Test"),
-  actions: [IconButton(onPressed: () {}, icon: Icon(Icons.settings))],
-);
+var customAppBar = (BuildContext context) => AppBar(
+      title: Text("Settings"),
+      actions: [
+        IconButton(
+          icon: Icon(Icons.settings),
+          onPressed: () {
+            Navigator.of(context).push(new MaterialPageRoute(
+                builder: (BuildContext context) => Material(
+                      child: Row(children: [Text("SETTINGS")]),
+                    )));
+          },
+        )
+      ],
+    );

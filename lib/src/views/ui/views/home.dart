@@ -49,7 +49,7 @@ class _Home extends State<StatefulWidget> {
                           return TextButton.icon(
                             onPressed: () {},
                             icon: Icon(Icons.web_asset),
-                            label: Text('Entry ${entries[index]['name']}'),
+                            label: Text('${entries[index]['name']}'),
                           );
                         })
                   ],

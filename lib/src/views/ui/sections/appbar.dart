@@ -10,7 +10,7 @@ var customAppBar = (BuildContext context) => AppBar(
           onPressed: () {
             Navigator.of(context).push(new MaterialPageRoute(
                 builder: (BuildContext context) => Material(
-                      child: Row(children: [Text("SETTINGS")]),
+                      child: settingsTemplate.settings,
                     )));
           },
         )

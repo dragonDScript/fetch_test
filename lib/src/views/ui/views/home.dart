@@ -11,7 +11,9 @@ class Home extends StatefulWidget {
 }
 
 class _Home extends State<StatefulWidget> {
-  var entries = [];
+  List<Map<String, String>> entries = [
+    {"name": "A"}
+  ];
 
   void newTemplate(context) {
     Navigator.of(context).push(new MaterialPageRoute<Null>(

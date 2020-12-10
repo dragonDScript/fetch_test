@@ -8,10 +8,7 @@ void save(String name, dynamic value) {
   // convert fields to json
   String json = convert.jsonEncode({name: name, value: value});
   Future<io.Directory> docPath = p.getApplicationDocumentsDirectory();
-  String path;
-  docPath.then((res) {
-    path = p.join(res.toString(), '.xstoreconfig.json');
-  });
+  String path = p.join(docPath.toString(), '.xstoreconfig.json');
 
   io.File write = io.File(path.toString());
   write.writeAsString(json); // write json contents

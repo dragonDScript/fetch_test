@@ -7,6 +7,7 @@ Widget newTemplate = Material(
       IconButton(
         icon: Icon(Icons.check),
         onPressed: () {},
+        tooltip: "Save",
       )
     ],
   ),

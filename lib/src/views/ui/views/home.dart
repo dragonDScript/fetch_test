@@ -15,9 +15,7 @@ class _Home extends State<StatefulWidget> {
 
   void newTemplate(context) {
     Navigator.of(context).push(new MaterialPageRoute<Null>(
-        builder: (BuildContext context) {
-          return template.newTemplate;
-        },
+        builder: (BuildContext context) => template.NewTemplate(),
         fullscreenDialog: true));
   }
 

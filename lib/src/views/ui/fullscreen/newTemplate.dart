@@ -6,6 +6,12 @@ class NewTemplate extends StatefulWidget {
 }
 
 class _NewTemplate extends State<StatefulWidget> {
+  String title;
+  String url;
+  String description;
+  Map<String, dynamic> headers = {};
+  bool isFavourite = false;
+
   Widget build(BuildContext context) {
     return Material(
       child: Column(children: [
@@ -20,7 +26,30 @@ class _NewTemplate extends State<StatefulWidget> {
           ],
         ),
         Column(
-          children: [TextField()],
+          children: [
+            TextField(
+              onChanged: (content) {
+                this.title = content;
+              },
+            ),
+            TextField(
+              onChanged: (content) {
+                this.url = content;
+              },
+            ),
+            TextField(
+              onChanged: (content) {
+                this.description = content;
+              },
+            ),
+            Checkbox(
+              value: this.isFavourite,
+              onChanged: (content) {
+                this.isFavourite = content;
+              },
+              tristate: true,
+            )
+          ],
         )
       ]),
     );

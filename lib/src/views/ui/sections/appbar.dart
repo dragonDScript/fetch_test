@@ -7,7 +7,7 @@ var customAppBar = (BuildContext context) => AppBar(
       actions: [
         IconButton(
           icon: Icon(Icons.settings),
-          tooltip: "Settings",
+          tooltip: "XStore Fetch Test",
           onPressed: () {
             Navigator.of(context).push(new MaterialPageRoute(
                 builder: (BuildContext context) => Material(

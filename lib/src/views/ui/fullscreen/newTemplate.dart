@@ -45,7 +45,9 @@ class _NewTemplate extends State<StatefulWidget> {
             Checkbox(
               value: this.isFavourite,
               onChanged: (content) {
-                this.isFavourite = content;
+                setState(() {
+                  this.isFavourite = content;
+                });
               },
               tristate: true,
             )

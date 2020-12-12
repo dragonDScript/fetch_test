@@ -20,7 +20,9 @@ class _NewTemplate extends State<StatefulWidget> {
           actions: [
             IconButton(
               icon: Icon(Icons.check),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               tooltip: "Save",
             )
           ],

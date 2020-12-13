@@ -5,7 +5,7 @@ import 'dart:convert' as convert;
 
 Future<List<Map<String, dynamic>>> load() async {
   io.Directory docPath = await p_provider.getApplicationDocumentsDirectory();
-  String path = p.join(docPath.toString(), '.xstoreconfig.json');
+  String path = p.join(docPath.path, '.xstoreconfig.json');
 
   io.File read = io.File(path.toString());
   var readedFile = await read.readAsString();

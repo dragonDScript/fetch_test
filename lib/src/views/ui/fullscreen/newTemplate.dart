@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fetch_test/src/logic/internal/template/new.template.dart'
+    as newTemplate;
 
 class NewTemplate extends StatefulWidget {
   @override
@@ -21,6 +23,13 @@ class _NewTemplate extends State<StatefulWidget> {
             IconButton(
               icon: Icon(Icons.check),
               onPressed: () {
+                newTemplate.newTemplate({
+                  'title': this.title,
+                  'description': this.description,
+                  'url': this.url,
+                  'headers': this.headers,
+                  'isFavourite': this.isFavourite
+                });
                 Navigator.pop(context);
               },
               tooltip: "Save",

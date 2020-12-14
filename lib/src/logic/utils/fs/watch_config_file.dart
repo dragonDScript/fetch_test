@@ -7,5 +7,5 @@ Future<Stream<FileSystemEvent>> watchConfigFile() async {
   //get the config file
   Directory docPath = await p_provider.getApplicationDocumentsDirectory();
   String path = p.join(docPath.path, '.xstoreconfig.json');
-  //watch it
+  //watch it (TO DO)
 }

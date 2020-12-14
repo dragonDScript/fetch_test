@@ -6,8 +6,8 @@ import 'dart:async';
 
 void save(String content) async {
   io.Directory docPath = await p_provider.getApplicationDocumentsDirectory();
-  String path = p.join(docPath.toString(), '.xstoreconfig.json');
+  String path = p.join(docPath.path, '.xstoreconfig.json');
 
-  io.File write = io.File(path.toString());
+  io.File write = io.File(path);
   write.writeAsString(content); // write json contents
 }

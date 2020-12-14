@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:fetch_test/src/logic/utils/save_data/load.config.dart' as load;
 import 'package:fetch_test/src/logic/utils/save_data/save.config.dart' as save;
 
@@ -6,6 +7,8 @@ void newTemplate(Map<String, dynamic> obj) {
 
   config.then((List<Map<String, dynamic>> res) {
     res.add(obj);
-    save.save(res.toString());
+
+    // write res as JSON
+    save.save(jsonEncode(res));
   });
 }

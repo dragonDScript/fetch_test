@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fetch_test/src/views/ui/sections/appbar.dart' as customAppBar;
 import 'package:fetch_test/src/views/ui/fullscreen/newTemplate.dart'
     as template;
+import 'package:fetch_test/src/logic/utils/fs/watch_config_file.dart'
+    as watcher;
 
 class Home extends StatefulWidget {
   @override

@@ -9,6 +9,6 @@ void createConfigFile() async {
   String path = p.join(docPath.path, '.xstoreconfig.json');
 
   if (!io.File(path).existsSync()) {
-    save.save('[]');
+    save.save('{"templates": []}');
   }
 }

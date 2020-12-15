@@ -46,7 +46,7 @@ class _Home extends State<StatefulWidget> {
                         itemBuilder: (BuildContext context, int index) {
                           return TextButton.icon(
                             onPressed: () {},
-                            icon: Icon(Icons.web_asset),
+                            icon: Icon(Icons.['${entries[index]['icon']}']),
                             label: Text('${entries[index]['name']}'),
                           );
                         })

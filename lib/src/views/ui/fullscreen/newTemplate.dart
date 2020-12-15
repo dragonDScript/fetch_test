@@ -9,8 +9,9 @@ class NewTemplate extends StatefulWidget {
 
 class _NewTemplate extends State<StatefulWidget> {
   String title;
-  String url;
   String description;
+  String icon;
+  String url;
   Map<String, dynamic> headers = {};
   bool isFavourite = false;
 
@@ -26,6 +27,7 @@ class _NewTemplate extends State<StatefulWidget> {
                 newTemplate.newTemplate({
                   'title': this.title,
                   'description': this.description,
+                  'icon': this.icon,
                   'url': this.url,
                   'headers': this.headers,
                   'isFavourite': this.isFavourite
@@ -51,6 +53,11 @@ class _NewTemplate extends State<StatefulWidget> {
             TextField(
               onChanged: (content) {
                 this.description = content;
+              },
+            ),
+            TextField(
+              onChanged: (content) {
+                this.icon = content;
               },
             ),
             Checkbox(

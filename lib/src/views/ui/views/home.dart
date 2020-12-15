@@ -15,10 +15,6 @@ class Home extends StatefulWidget {
 class _Home extends State<StatefulWidget> {
   List<Map<String, String>> entries = [];
 
-  _Home() {
-    watcher.watchConfigFile();
-  }
-
   void newTemplate(context) {
     Navigator.of(context).push(new MaterialPageRoute<Null>(
         builder: (BuildContext context) => template.NewTemplate(),

@@ -6,6 +6,7 @@ import 'package:fetch_test/src/logic/utils/fs/watch_config_file.dart'
     as watcher;
 import 'package:fetch_test/src/logic/utils/save_data/get.config.dart'
     as getConfig;
+import 'dart:async';
 
 class Home extends StatefulWidget {
   @override
@@ -15,11 +16,10 @@ class Home extends StatefulWidget {
 }
 
 class _Home extends State<StatefulWidget> {
-  List<dynamic> entries;
+  Future<dynamic> entries = getConfig.getConfig('templates');
   int selectedButton;
 
   _Home() {
-    entries = [];
     selectedButton = 0;
   }
 
@@ -33,44 +33,47 @@ class _Home extends State<StatefulWidget> {
     bool isDesktop = MediaQuery.of(context).size.width > 600;
     return Scaffold(
         appBar: customAppBar.customAppBar(context),
-        body: Row(
-          children: [
-            Expanded(
-                child: ListView(
-                  children: [
-                    Container(
-                      color: Colors.grey[200],
-                      child: TextButton.icon(
-                          icon: Icon(Icons.add),
-                          label: Text("Create new template"),
-                          onPressed: () {
-                            newTemplate(context);
-                          }),
-                    ),
-                    ListView.builder(
-                        padding: const EdgeInsets.all(8),
-                        itemCount: entries.length,
-                        shrinkWrap: true,
-                        itemBuilder: (BuildContext context, int index) {
-                          String icon = entries[index]['icon'];
-                          return TextButton.icon(
-                            onPressed: () {},
-                            icon: Icon(Icons.web),
-                            label: Text('${entries[index]['name']}'),
-                          );
-                        })
-                  ],
-                ),
-                flex: 3),
-            Expanded(
-                child: Column(
-                  children: [
-                    TextFormField(
-                        initialValue: entries[selectedButton]['title'])
-                  ],
-                ),
-                flex: isDesktop == true ? 5 : null)
-          ],
-        ));
+        body: FutureBuilder(
+            future: entries,
+            builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) =>
+                Row(children: [
+                  Flexible(
+                      child: ListView(
+                        children: [
+                          Container(
+                            color: Colors.grey[200],
+                            child: TextButton.icon(
+                                icon: Icon(Icons.add),
+                                label: Text("Create new template"),
+                                onPressed: () {
+                                  newTemplate(context);
+                                }),
+                          ),
+                          ListView.builder(
+                              padding: const EdgeInsets.all(8),
+                              itemCount: snapshot.data.length,
+                              shrinkWrap: true,
+                              itemBuilder: (BuildContext context, int index) {
+                                String icon = snapshot.data[index]['icon'];
+                                return TextButton.icon(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.web),
+                                  label:
+                                      Text('${snapshot.data[index]['name']}'),
+                                );
+                              })
+                        ],
+                      ),
+                      flex: 3),
+                  Flexible(
+                      child: Column(
+                        children: [
+                          TextFormField(
+                              initialValue: snapshot.data[selectedButton]
+                                  ['title'])
+                        ],
+                      ),
+                      flex: isDesktop == true ? 5 : null)
+                ])));
   }
 }

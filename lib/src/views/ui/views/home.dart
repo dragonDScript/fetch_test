@@ -4,6 +4,8 @@ import 'package:fetch_test/src/views/ui/fullscreen/newTemplate.dart'
     as template;
 import 'package:fetch_test/src/logic/utils/fs/watch_config_file.dart'
     as watcher;
+import 'package:fetch_test/src/logic/utils/save_data/get.config.dart'
+    as getConfig;
 
 class Home extends StatefulWidget {
   @override
@@ -13,8 +15,14 @@ class Home extends StatefulWidget {
 }
 
 class _Home extends State<StatefulWidget> {
-  List<Map<String, String>> entries = [];
+  List<dynamic> entries;
   int selectedButton;
+
+  _Home() {
+    entries = [];
+    selectedButton = 0;
+  }
+
   void newTemplate(context) {
     Navigator.of(context).push(new MaterialPageRoute<Null>(
         builder: (BuildContext context) => template.NewTemplate(),

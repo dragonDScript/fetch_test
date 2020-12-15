@@ -59,7 +59,7 @@ class _Home extends State<StatefulWidget> {
                                   onPressed: () {},
                                   icon: Icon(Icons.web),
                                   label:
-                                      Text('${snapshot.data[index]['name']}'),
+                                      Text('${snapshot.data[index]['title']}'),
                                 );
                               })
                         ],

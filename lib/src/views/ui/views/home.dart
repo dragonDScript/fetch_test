@@ -14,7 +14,7 @@ class Home extends StatefulWidget {
 
 class _Home extends State<StatefulWidget> {
   List<Map<String, String>> entries = [];
-
+  int selectedButton;
   void newTemplate(context) {
     Navigator.of(context).push(new MaterialPageRoute<Null>(
         builder: (BuildContext context) => template.NewTemplate(),
@@ -44,16 +44,24 @@ class _Home extends State<StatefulWidget> {
                         itemCount: entries.length,
                         shrinkWrap: true,
                         itemBuilder: (BuildContext context, int index) {
+                          String icon = entries[index]['icon'];
                           return TextButton.icon(
                             onPressed: () {},
-                            icon: Icon(Icons.['${entries[index]['icon']}']),
+                            icon: Icon(Icons.web),
                             label: Text('${entries[index]['name']}'),
                           );
                         })
                   ],
                 ),
                 flex: 3),
-            Expanded(child: Text("2"), flex: isDesktop == true ? 5 : null)
+            Expanded(
+                child: Column(
+                  children: [
+                    TextFormField(
+                        initialValue: entries[selectedButton]['title'])
+                  ],
+                ),
+                flex: isDesktop == true ? 5 : null)
           ],
         ));
   }

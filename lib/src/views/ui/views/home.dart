@@ -17,11 +17,7 @@ class Home extends StatefulWidget {
 
 class _Home extends State<StatefulWidget> {
   Future<dynamic> entries = getConfig.getConfig('templates');
-  int selectedButton;
-
-  _Home() {
-    selectedButton = 0;
-  }
+  int selectedButton = 0;
 
   void newTemplate(context) {
     Navigator.of(context).push(new MaterialPageRoute<Null>(
@@ -56,7 +52,10 @@ class _Home extends State<StatefulWidget> {
                               itemBuilder: (BuildContext context, int index) {
                                 String icon = snapshot.data[index]['icon'];
                                 return TextButton.icon(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    //select this card when you click on it
+                                    this.selectedButton = index;
+                                  },
                                   icon: Icon(Icons.web),
                                   label:
                                       Text('${snapshot.data[index]['title']}'),

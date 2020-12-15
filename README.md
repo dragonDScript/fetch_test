@@ -10,7 +10,4 @@ Works with localhost.
 
 This app is not available with Windows yet due to incompatibilities. In specific:
 
-- The path provider module doesn't support Windows.
 - You can't watch a single file in Windows in Dart.
-
-I am thinking about contributing to those packages (mainly the path provider one).

@@ -16,7 +16,7 @@ Material settings = Material(
       children: [
         TextButton(
             onPressed: () {
-              save.save('{}');
+              save.save('{"templates": []}');
             },
             child: Text("Reset settings"))
       ],

@@ -70,7 +70,11 @@ class _Home extends State<StatefulWidget> {
                             ? TextFormField(
                                 initialValue: snapshot.data[selectedButton]
                                     ['title'])
-                            : Center(child: Icon(Icons.inbox))
+                            : Center(
+                                child: Column(children: [
+                                Icon(Icons.all_inbox),
+                                Text("Nothing to preview")
+                              ]))
                       ]),
                       flex: isDesktop == true ? 5 : null)
                 ])));

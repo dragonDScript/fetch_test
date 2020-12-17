@@ -65,15 +65,13 @@ class _Home extends State<StatefulWidget> {
                       ),
                       flex: 3),
                   Flexible(
-                      child: Column(
-                        children: snapshot.data.length > 0
-                            ? [
-                                TextFormField(
-                                    initialValue: snapshot.data[selectedButton]
-                                        ['title'])
-                              ]
-                            : [TextFormField()],
-                      ),
+                      child: Column(children: [
+                        snapshot.data.length > 0
+                            ? TextFormField(
+                                initialValue: snapshot.data[selectedButton]
+                                    ['title'])
+                            : Center(child: Icon(Icons.inbox))
+                      ]),
                       flex: isDesktop == true ? 5 : null)
                 ])));
   }

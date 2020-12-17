@@ -8,7 +8,7 @@ import 'package:fetch_test/src/logic/utils/save_data/get.config.dart'
     as getConfig;
 import 'package:fetch_test/src/logic/utils/save_data/set.config.dart'
     as setConfig;
-import 'package:fetch_test/src/logic/utils/save_data/delete.config.dart'
+import 'package:fetch_test/src/logic/utils/save_data/delete.config.dart';
 import 'dart:async';
 
 class Home extends StatefulWidget {

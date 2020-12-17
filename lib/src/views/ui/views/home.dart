@@ -6,6 +6,9 @@ import 'package:fetch_test/src/logic/utils/fs/watch_config_file.dart'
     as watcher;
 import 'package:fetch_test/src/logic/utils/save_data/get.config.dart'
     as getConfig;
+import 'package:fetch_test/src/logic/utils/save_data/set.config.dart'
+    as setConfig;
+import 'package:fetch_test/src/logic/utils/save_data/delete.config.dart'
 import 'dart:async';
 
 class Home extends StatefulWidget {
@@ -59,6 +62,9 @@ class _Home extends State<StatefulWidget> {
                                   icon: Icon(Icons.web),
                                   label:
                                       Text('${snapshot.data[index]['title']}'),
+                                  onLongPress: () async {
+                                    deleteConfig('templates', index);
+                                  },
                                 );
                               })
                         ],

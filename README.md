@@ -10,4 +10,4 @@ Works with localhost.
 
 This app is not available with Windows yet due to incompatibilities. In specific:
 
-- You can't watch a single file in Windows in Dart.
+- You can't watch a single file in Android.

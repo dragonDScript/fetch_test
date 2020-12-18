@@ -55,7 +55,7 @@ class _Home extends State<StatefulWidget> {
                                 ),
                                 ListView.builder(
                                     padding: const EdgeInsets.all(8),
-                                    itemCount: snapshot.data.length,
+                                    itemCount: list.length,
                                     shrinkWrap: true,
                                     itemBuilder:
                                         (BuildContext context, int index) {
@@ -79,8 +79,8 @@ class _Home extends State<StatefulWidget> {
                             child: Column(children: [
                               list.length > 0
                                   ? TextFormField(
-                                      initialValue: snapshot
-                                          .data[selectedButton]['title'])
+                                      initialValue: list[selectedButton]
+                                          ['title'])
                                   : Center(
                                       child: Column(children: [
                                       Icon(Icons.all_inbox),
